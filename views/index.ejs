@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <script src="/public/js/home.js"></script>
+    <title>[Home]</title>
+</head>
+<center>
+<body>
+
+<!-- The Modal -->
+<div id="play" class="play">
+
+    <!-- Modal content -->
+    <div class="play-content">
+      <input id="code" spellcheck="false" maxlength="6" autocomplete=false type="search">
+      <hr>"
+      <button type="button" onclick="p()">Join</button>
+    </div>
+  
+</div>
+
+    <nav>
+        <ul>
+        <li><a class="nav-btn" onclick="redirect('/quizzes')">Quizzes</a><li>
+        <li><a id="play" onclick="<%= second %>()" class="nav-btn"><%= second %></a><li>
+        <img id="logo" src="/public/img/logo1.png">
+        <li><a onclick="redirect('/<%= var1 %>')" class="nav-btn"><%= var1 %></a><li>
+        <div class="dropdown">
+        <li><a onclick="redirect('/<%= var2 %>')" class="nav-btn"><%= var2 %></a><li>
+        </ul>
+    </nav>
+    <div>
+        <p style="font-size: large;">Stats:</p>
+        <p style="font-size: medium;">Number Of Users: <%= data1 %></p>
+        <p style="font-size: medium;">Number Of Quizzes: <%= data2 %></p>
+    </div>
+</center>
+</body>
+</html>

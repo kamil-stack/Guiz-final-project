@@ -1,0 +1,28 @@
+{
+  "name": "WebSocketTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.10",
+    "nodemon": "^2.0.4",
+    "socket.io": "^3.0.4",
+    "socketcluster": "^16.0.1",
+    "websocket": "^1.0.33",
+    "ws": "^7.3.1"
+  }
+}

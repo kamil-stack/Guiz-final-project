@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <link rel="stylesheet" href="/public/css/main.css">
+    <script>
+const params = (new URL(document.location)).searchParams;
+const noq = params.get("noq");
+var qnum = 0
+const code = params.get("code");
+correct = 0
+let nextQuestion = (qn,q,c1,c2,c3,c4) =>{
+    if (qnum == noq){
+        document.write("Congratz you got",correct+"/"+noq)
+        return
+    }
+    let redirect = (site) =>{
+  window.location.href = site;
+    }
+  document.getElementById('qnum').innerHTML = "Q"+(qn+1)+`/${noq}`; 
+  document.getElementById('question').innerHTML = q; 
+  document.getElementById('c-1').innerHTML = c1; 
+  document.getElementById('c-2').innerHTML = c2;
+  document.getElementById('c-3').innerHTML = c3;
+  document.getElementById('c-4').innerHTML = c4;
+}
+let next = () =>{
+    if (qnum == noq ){
+        document.write("Congratz you got",correct+"/"+noq)
+        return
+    }
+    var url = `http://127.0.0.1/api/quiz?code=${code}`
+     fetch(url)
+    .then(data=>{return data.json()})
+    .then(da=>{
+        if ((noq-1 !== qnum)){
+            qnum = qnum + 1
+            ques = [da.questions[qnum][1], da.questions[qnum][2][0], da.questions[qnum][2][1], da.questions[qnum][2][2]]
+            ques = ques.sort(() => Math.random() - 0.5);
+            nextQuestion(qnum, da.questions[qnum][0], ques[0], ques[1], ques[2], ques[3])
+        }else{
+            document.write("<html lang='en'><head><link rel='stylesheet' href='/public/css/main.css'><center><p style='font-size: 30px'>Congratz you got",correct+"/"+noq+"</p></center><a style='color: white;' href='/')'>Return Home</p>")
+            return
+        }
+    })
+}
+
+let submitans = (ans,qn) =>{
+    if (qn == noq ){
+        document.write("Congratz you got",correct+"/"+noq)
+        return
+    }
+    var url =`http://127.0.0.1/api/check?code=${code}&q=${qn}&ans=${ans}`
+    var options = {method: "GET"}
+    console.log(ans)
+    fetch(url, options)
+    .then(res=> {    
+    return res.json();
+    console.log(res)
+    })
+    .then(jsonData=>{
+        if (jsonData.answer == true){
+            correct = correct + 1
+            console.log("Correct!")
+            next()
+        }else {
+            console.log("Incorrect!")
+            next()
+        }
+    
+    })};
+
+    var url = `http://127.0.0.1/api/quiz?code=${code}`
+    fetch(url)
+    .then(data=>{return data.json()})
+    .then(da=>{
+        ques = [da.questions[0][1], da.questions[0][2][0], da.questions[0][2][1], da.questions[0][2][2]]
+        ques = ques.sort(() => Math.random() - 0.5);
+        nextQuestion(qnum, da.questions[0][0], ques[0], ques[1], ques[2], ques[3])
+    })
+    </script>
+    </head>
+<body>
+
+<style>
+#qum {
+    display: inline-block;
+    font-weight: bold;
+}
+#question{
+    text-align: center;
+    display: inline-block;
+    font-size: 25px;
+}
+.answer {
+    text-align: center;
+    color:aliceblue;
+    font-size: 20px;
+    display:block;
+    border-style: solid;
+    border-width: 4px;
+    border: auto;
+    padding: 10px;
+    width: auto;
+}
+</style>
+
+<div class="main">
+<p id="qnum">Question X of X</p>
+<p class="top" id="question">PlaceHolder-Question</p><br>
+<p class="answer" onclick="submitans(document.getElementById('c-1').textContent,qnum)" id="c-1">PlaceHolder-Answer1</p>
+<p class="answer" onclick="submitans(document.getElementById('c-2').textContent,qnum)" id="c-2">PlaceHolder-Answer2</p>
+<p class="answer" onclick="submitans(document.getElementById('c-3').textContent,qnum)" id="c-3">PlaceHolder-Answer4</p>
+<p class="answer" onclick="submitans(document.getElementById('c-4').textContent,qnum)" id="c-4">PlaceHolder-Answer3</p>
+</div>
+<p id="checked"></p>
+
+</body>
+</html>

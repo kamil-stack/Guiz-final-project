@@ -1,0 +1,305 @@
+body{
+    background-color: #212121;
+    color: #02CF5B;
+}
+
+@font-face {
+    font-family:"comfortaa";
+    src: url("/public/font/Comfortaa.ttf") format("truetype");
+}
+
+nav {
+    padding: 5px;
+}
+
+img {
+    pointer-events: none;
+  }
+
+
+nav .ul {
+    list-style-type: none;
+    display: table;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    vertical-align: middle;
+  }
+  
+.nav-btn {
+    margin: 0 60px;
+    text-decoration: none;
+    color: #02CF5B;
+}
+
+.nav-btn:hover {
+    color: #027B37;
+}
+
+a{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: comfortaa;
+}
+
+li {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#logo {
+    width: 50%;
+    height: auto;
+}
+
+  
+@keyframes fadeIn {
+    0% {
+      color: #027B37;
+    }
+    100% {
+      color: #02CF5B;
+    }
+  }
+@keyframes come-in {
+    from {margin-top: -400px;}
+    to {margin-top: 0px;}
+}
+@keyframes come-out {
+    from {margin-top: 0px;}
+    to {margin-top: -400px;}
+}
+
+.play {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: none; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+
+.play-content {
+    animation-name: come-in;
+    animation-duration: 1s;
+    background-color: #212121;
+    margin: auto;
+    padding: 0px;
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid #888;
+    width: 310px;
+  }
+
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+  
+
+
+.play-content input{
+    border-radius: 15px 15px 15px 15px;
+    font-family: comfortaa;
+    text-transform:uppercase;
+    background-color: #212121;
+    width: 300px;
+    height: auto;
+    padding: 5px;
+    font-size: 50px;
+    display: inline-block;
+    box-sizing: content-box;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    color: #02CF5B;
+}
+
+.play-content input:focus{
+    outline: none;
+}
+
+.play-content button:focus{
+    animation: fadeIn alternate-reverse 2s;
+    outline: none;
+    color: #027B37;
+}
+
+.play-content button{
+    border-left: 1px;
+    border-color: aliceblue;
+    background-color: #212121;
+    color: #02CF5B;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    font-family: comfortaa;
+    display: inline-block;
+    height: auto;
+    font-size: 50px;
+    margin-left: -5px;
+    width: 120px;
+    padding: 5px;
+    box-sizing: content-box;
+}
+
+@keyframes come-in-login {
+    from {margin-top: -400px;}
+    to {margin-top: -175px;}
+}
+
+.login {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: none; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.login-content {
+    background-color: #212121;
+    padding: 10px;
+    margin-top: 40px;
+    width: 510px;
+    font-family: comfortaa;
+    font-size: 30px;
+    border-radius: 15px 15px 15px 15px;
+  }
+
+.login-content input{
+    font-family: comfortaa;
+    text-transform:uppercase;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #212121;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    padding-top: -10px;
+    font-size: 20px;
+    display: inline-block;
+    box-sizing: content-box;
+    text-align: center;
+    text-decoration: none;
+    border: #888;
+    border: 1px;
+    color: #02CF5B;
+    border-style: solid;
+}
+.login-content input:focus{
+    outline: none;
+    border-style: solid;
+}
+.login-content h1{
+    margin-top: 10px;
+}
+.login-content button:focus{
+    animation: fadeIn alternate-reverse 2s;
+    outline: none;
+    color: #027B37;
+}
+
+.login-content button{
+    border: none;
+    color: #02CF5B;
+    background-color: #21212121;
+    text-align: center;
+    text-decoration: none;
+    font-family: comfortaa;
+    display: inline-block;
+    height: auto;
+    font-size: 30px;
+    margin-left: 0px;
+    width: 100%;
+    padding: 1px;
+    box-sizing: content-box;
+}
+
+.register {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: none; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.register-content {
+    background-color: #212121;
+    padding: 10px;
+    margin-top: 40px;
+    width: 510px;
+    font-family: comfortaa;
+    font-size: 30px;
+    border-radius: 15px 15px 15px 15px;
+  }
+
+.register-content input{
+    font-family: comfortaa;
+    text-transform:uppercase;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #212121;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    padding-top: -10px;
+    font-size: 20px;
+    display: inline-block;
+    box-sizing: content-box;
+    text-align: center;
+    text-decoration: none;
+    border: #888;
+    border: 1px;
+    color: #02CF5B;
+    border-style: solid;
+}
+.register-content input:focus{
+    outline: none;
+    border-style: solid;
+}
+.register-content h1{
+    margin-top: 10px;
+}
+.register-content button:focus{
+    animation: fadeIn alternate-reverse 2s;
+    outline: none;
+    color: #027B37;
+}
+
+.register-content button{
+    border: none;
+    color: #02CF5B;
+    background-color: #21212121;
+    text-align: center;
+    text-decoration: none;
+    font-family: comfortaa;
+    display: inline-block;
+    height: auto;
+    font-size: 30px;
+    margin-left: 0px;
+    width: 100%;
+    padding: 1px;
+    box-sizing: content-box;
+}
+
+
+/* temp

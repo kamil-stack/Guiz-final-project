@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/create.css">
+    <script src="/public/js/create.js"></script>
+    <title>[Quiz Creation]</title>
+</head>
+<body>
+    <div class="top">
+    <p style="font-family: comfortaa; text-align: center; font-size: 60px;">Quiz Creation</p>
+    <p class="top">Quiz Title:</p>
+    <input type="text" id="quizTitle">
+    <p class="top">Number Of Questions:</p>
+    <input type="number" id="noq"><br><br>
+    <a onclick="redirect('/create2?title='+document.getElementById('quizTitle').value+'&noq='+document.getElementById('noq').value)" >Next</a>
+</div>
+
+
+</body>
+</html>

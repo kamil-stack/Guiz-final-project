@@ -1,0 +1,76 @@
+body{
+    background-color: #212121;
+    color: #02CF5B;
+}
+
+@font-face {
+    font-family:"comfortaa";
+    src: url("/public/font/Comfortaa.ttf") format("truetype");
+}
+
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+.top {
+    text-align: center;
+}
+
+p.top {
+    font-size: 20px;
+    font-family: comfortaa;
+}
+
+input {
+    font-family: comfortaa;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #212121;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    padding-top: -10px;
+    font-size: 15px;
+    display: inline-block;
+    box-sizing: content-box;
+    text-align: center;
+    text-decoration: none;
+    border: #888;
+    border: 1px;
+    color: #02CF5B;
+    border-style: solid;
+}
+
+.quizdata {
+    margin: 0;
+    border: 5px solid black;
+}
+
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

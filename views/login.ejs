@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <script src="/public/js/home.js"></script>
+    <title>[Login]</title>
+</head>
+<center>
+<body>
+<form action="/api/login" method="POST">
+    <div class="login-content">
+        <h1>User Login</h1>
+        <input spellcheck="false" autocomplete=false placeholder="USERNAME" type="text" name="username">
+        <br><br>
+        <input spellcheck="false" autocomplete=false placeholder="PASSWORD" type="password" name="password">
+        <hr>
+        <button style="font-size: 40px;" type="submit" >Login</button>
+        <button style="font-size: 20px;" type="button" onclick="redirect('/register')">Register</button>
+    </div>
+</form>
+</center>
+</body>
